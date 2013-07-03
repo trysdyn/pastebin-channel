@@ -253,6 +253,10 @@ while not quit:
             # Down = Scroll down
             elif event.key == K_DOWN:
                 scroll_all(-font_face[1] * 10)
+            # End = Scroll to end of loaded content
+            elif event.key == K_END:
+                if len(text_lines):
+                    scroll_all(win_height - text_lines[-1].y)
         elif event.type == MOUSEBUTTONDOWN:
             if event.button == 1:
                 for line in text_lines:
